@@ -27,6 +27,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta property="og:image:alt" content="Таня Калинина, фасилитаторка и авторка текстов">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="styles.css">
+<script src="site.js" defer></script>
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -74,7 +75,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 }
 </script>
 </head>
-<body>
+<body class="home-page">
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-56VS6ZNW"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -85,7 +86,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <div class="topbar">
   <a class="mark" href="index.html">Таня Калинина</a>
-  <nav class="topnav" aria-label="Разделы сайта">
+  <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu"><span class="menu-label">Меню</span><span class="menu-lines" aria-hidden="true"><i></i><i></i></span></button>
+  <nav class="topnav" id="site-menu" aria-label="Разделы сайта">
     <a href="teams.html">Команды и сообщества</a>
     <a href="texts.html">Тексты и экспертиза</a>
     <a href="about.html">Обо мне</a>
@@ -127,7 +129,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <span class="go">Смотреть публикации</span>
     </a>
   </div>
-  <p class="inline-cta">Хотите сначала понять, с кем имеете дело, — <a href="about.html">почитайте обо мне</a>, там опыт, принципы работы и полные отзывы коллег.</p>
+  <p class="inline-cta">Хотите лучше узнать мой профессиональный бэкграунд? <a href="about.html">Почитайте раздел обо мне</a>, там опыт, принципы работы и полные отзывы коллег.</p>
 </section>
 
 <section class="grid">
@@ -143,7 +145,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </ul>
 </section>
 
-<section>
+<section class="statement decorated motif-orbit">
   <p class="eyebrow">Миссия</p>
   <h2 class="prose">Я создаю пространства, основанные на уважительном любопытстве и внимании к разнообразию</h2>
   <p class="lead">Здесь люди могут совместно исследовать смыслы, учиться, открывать новые истории о себе и мире, делиться опытом и поддерживать друг друга в создании более справедливой и чуткой реальности для каждой.</p>

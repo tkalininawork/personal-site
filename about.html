@@ -27,6 +27,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta property="og:image:alt" content="Таня Калинина, фасилитаторка и авторка текстов">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="styles.css">
+<script src="site.js" defer></script>
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -74,7 +75,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 }
 </script>
 </head>
-<body>
+<body class="about-page">
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-56VS6ZNW"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -85,7 +86,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <div class="topbar">
   <a class="mark" href="index.html">Таня Калинина</a>
-  <nav class="topnav" aria-label="Разделы сайта">
+  <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu"><span class="menu-label">Меню</span><span class="menu-lines" aria-hidden="true"><i></i><i></i></span></button>
+  <nav class="topnav" id="site-menu" aria-label="Разделы сайта">
     <a href="teams.html">Команды и сообщества</a>
     <a href="texts.html">Тексты и экспертиза</a>
     <a href="about.html" aria-current="page">Обо мне</a>
@@ -93,16 +95,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div>
 
 <main id="main">
-<h1 class="page">Обо мне</h1>
-<p class="lead">Фасилитаторка и модераторка, исследовательница социальных процессов и коллективных практик, авторка текстов на социальные темы, экспертка по работе с сообществами и в сфере защиты прав женщин и квир-людей, продюсерка социальных проектов.</p>
+<header class="page-intro about-intro">
+  <div class="page-intro-copy">
+    <h1 class="page">Обо мне</h1>
+    <p class="lead">Фасилитаторка и модераторка, исследовательница социальных процессов и коллективных практик, авторка текстов на социальные темы, экспертка по работе с сообществами и в сфере защиты прав женщин и квир-людей, продюсерка социальных проектов.</p>
+    <nav class="anchors" aria-label="Разделы страницы">
+      <a href="#creed">На что я опираюсь</a>
+      <a href="#experience">Опыт</a>
+      <a href="#reviews">Отзывы</a>
+    </nav>
+  </div>
+  <figure class="about-portrait"><img src="img/portrait.jpg" alt="Портрет Тани Калининой" width="900" height="1352"></figure>
+</header>
 
-<nav class="anchors" aria-label="Разделы страницы">
-  <a href="#creed">На что я опираюсь</a>
-  <a href="#experience">Опыт</a>
-  <a href="#reviews">Отзывы</a>
-</nav>
-
-<section id="creed">
+<section id="creed" class="decorated motif-orbit">
   <p class="eyebrow">Принципы</p>
   <h2>На что я опираюсь</h2>
   <ol class="creed">
@@ -115,7 +121,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </ol>
 </section>
 
-<section id="experience">
+<section id="experience" class="decorated motif-thread">
   <p class="eyebrow">Практика</p>
   <h2>Опыт работы в некоммерческом секторе</h2>
   <ul class="years">

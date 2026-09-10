@@ -27,6 +27,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta property="og:image:alt" content="Таня Калинина, фасилитаторка и авторка текстов">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="styles.css">
+<script src="site.js" defer></script>
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -87,7 +88,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 }
 </script>
 </head>
-<body>
+<body class="teams-page">
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-56VS6ZNW"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -98,7 +99,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <div class="topbar">
   <a class="mark" href="index.html">Таня Калинина</a>
-  <nav class="topnav" aria-label="Разделы сайта">
+  <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu"><span class="menu-label">Меню</span><span class="menu-lines" aria-hidden="true"><i></i><i></i></span></button>
+  <nav class="topnav" id="site-menu" aria-label="Разделы сайта">
     <a href="teams.html" aria-current="page">Команды и сообщества</a>
     <a href="texts.html">Тексты и экспертиза</a>
     <a href="about.html">Обо мне</a>
@@ -106,23 +108,46 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div>
 
 <main id="main">
-<h1 class="page">Работа с командами и сообществами</h1>
-<p class="lead">С 2020 года я проектирую и провожу стратегические, командные и публичные обсуждения для организаций, сообществ и команд, которым важно прийти к ясности, зрелым решениям и реалистичным следующим шагам.</p>
+<header class="page-intro">
+  <div class="page-intro-copy">
+    <h1 class="page">Работа с командами и сообществами</h1>
+    <p class="lead">Проектирую и провожу стратегические сессии, командные встречи и мероприятия для больших групп, включая конференции. Работаю с организациями, сообществами и командами, которым важно прийти к ясности, зрелым решениям и реалистичным следующим шагам.</p>
+    <nav class="anchors" aria-label="Разделы страницы">
+      <a href="#facilitation">Фасилитация</a>
+      <a href="#consulting">Консультирование</a>
+      <a href="#training">Обучение</a>
+      <a href="#who">С кем я работаю</a>
+      <a href="#voices">Отзывы</a>
+    </nav>
+  </div>
+  <div class="motif-art motif-balance" aria-hidden="true"><span></span><span></span><span></span></div>
+</header>
 
-<nav class="anchors" aria-label="Разделы страницы">
-  <a href="#facilitation">Фасилитация</a>
-  <a href="#consulting">Консультирование</a>
-  <a href="#training">Обучение</a>
-  <a href="#who">С кем я работаю</a>
-  <a href="#voices">Отзывы</a>
-</nav>
+<div class="practice-stats" aria-label="Опыт и формат работы">
+  <div class="practice-stat">
+    <strong>6+ лет</strong>
+    <span>фасилитационной практики</span>
+  </div>
+  <div class="practice-stat">
+    <strong>2000+ часов</strong>
+    <span>проведённых сессий</span>
+  </div>
+  <div class="practice-stat">
+    <strong>От 3 до 100+</strong>
+    <span>участниц и участников</span>
+  </div>
+  <div class="practice-stat">
+    <strong>Очно и онлайн</strong>
+    <span>с командами из разных стран</span>
+  </div>
+</div>
 
 <div class="band">
   <img src="img/facilitation.jpg" alt="Таня Калинина у флипчартов во время стратегической сессии" width="1200" height="1600">
 </div>
 <p class="caption">Стратегическая сессия, работа с видением и приоритетами команды</p>
 
-<section id="facilitation">
+<section id="facilitation" class="decorated motif-orbit">
   <p class="eyebrow">Направление 1</p>
   <h2>Фасилитация, модерация и проектирование коллективных обсуждений</h2>
   <div class="prose">
@@ -148,7 +173,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <p class="inline-cta">По запросу отправлю CV и кейсы с подробным описанием опыта. Напишите в <a href="https://t.me/poboisya_boga">телеграм</a> или на <a href="mailto:t.kalinina.work@gmail.com">t.kalinina.work@gmail.com</a></p>
 </section>
 
-<section id="consulting">
+<section id="consulting" class="decorated motif-blob">
   <p class="eyebrow">Направление 2</p>
   <h2>Консультирование по развитию сообществ, командной культуры и волонтёрского направления</h2>
   <div class="prose">
@@ -159,7 +184,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<section id="training" class="grid">
+<section id="training" class="grid decorated motif-thread">
   <p class="eyebrow">Направление 3</p>
   <h2>Тренинги и обучение по фасилитации, работе с группами и комьюнити-билдингу</h2>
   <div class="prose">
@@ -183,7 +208,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </ul>
 </section>
 
-<section id="who">
+<aside class="work-format">
+  <p class="eyebrow">Формат работы</p>
+  <div class="work-format-copy">
+    <h2>Можно встретиться очно или онлайн</h2>
+    <p>Онлайн-сессии провожу для команд из разных стран. Выездные сессии провожу по договорённости. Расходы на дорогу и проживание включаются в бюджет проекта.</p>
+  </div>
+</aside>
+
+<section id="who" class="decorated motif-orbit">
   <p class="eyebrow">Аудитория</p>
   <h2>С кем я чаще всего работаю</h2>
   <div class="prose">
