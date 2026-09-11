@@ -15,11 +15,21 @@
 * { box-sizing: border-box; }
 
 html {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  overflow-x: clip;
   scroll-behavior: smooth;
   background: var(--paper);
 }
 
 body {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  overflow-x: hidden;
+  overflow-x: clip;
   margin: 0;
   color: var(--ink);
   background:
@@ -45,7 +55,50 @@ button, input, textarea, select { font: inherit; }
 
 .wrap {
   width: min(1180px, calc(100% - 48px));
+  max-width: 100%;
   margin: 0 auto;
+}
+
+main,
+section,
+header,
+footer,
+.topbar,
+.hero,
+.page-intro,
+.page-intro-copy,
+.doors,
+.voices,
+.practice-stats,
+.work-format-copy,
+.statement,
+.talk,
+.pubs,
+.years,
+.creed,
+.card,
+.review,
+.voice,
+.door {
+  min-width: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+li,
+blockquote,
+.who,
+footer a,
+.pubs a {
+  overflow-wrap: break-word;
+}
+
+footer a,
+.pubs a {
+  overflow-wrap: anywhere;
 }
 
 .skip {
@@ -789,7 +842,7 @@ blockquote::after { content: close-quote; color: var(--pink); }
   font-weight: 800;
 }
 
-.dots { display: flex; gap: 6px; margin-left: 6px; }
+.dots { display: flex; flex-wrap: wrap; gap: 6px; margin-left: 6px; }
 .dot { width: 9px; height: 9px; padding: 0; background: rgba(7, 26, 59, 0.23); border-radius: 50%; }
 .dot[aria-selected="true"] { background: var(--pink); }
 .count { margin-left: auto; color: var(--muted); font-size: 14px; }
@@ -914,6 +967,7 @@ footer span:last-child { text-align: right; }
   .mark { font-size: 22px; }
   .menu-toggle {
     display: inline-flex;
+    flex: 0 0 auto;
     align-items: center;
     gap: 10px;
     min-height: 42px;
@@ -984,8 +1038,17 @@ footer span:last-child { text-align: right; }
   .creed li { min-height: 0; }
   .card, .review, .voice, .door { border-radius: 17px; }
   .said img { width: 58px; height: 58px; }
+  .rail { flex-wrap: wrap; }
+  .rail .dots { order: 3; width: 100%; margin: 4px 0 0; }
   footer { flex-direction: column; }
   footer span:last-child { text-align: left; }
+}
+
+@media (max-width: 380px) {
+  .wrap { width: calc(100% - 24px); }
+  .practice-stats { grid-template-columns: 1fr; }
+  .menu-toggle { padding-inline: 11px; }
+  .menu-label { display: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {
