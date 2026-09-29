@@ -180,7 +180,6 @@
   top: 29%;
   left: -12%;
   width: 154px;
-  transform: scaleX(-1);
   animation: lp-bird-left 34s linear 11s infinite;
 }
 
@@ -631,10 +630,20 @@
   border-left: 1px solid var(--line);
 }
 
-.lp-not-therapy {
-  margin: 46px 0 0;
-  color: var(--muted);
-  font-size: 15px;
+.lp-not-therapy-card {
+  margin: 48px 0 0;
+  padding: 28px 36px;
+  background: var(--lp-lime);
+  border-radius: 20px;
+  border-left: 5px solid var(--lp-ink);
+}
+
+.lp-not-therapy-card p {
+  margin: 0;
+  color: var(--lp-ink);
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.55;
 }
 
 .lp-invitation > img {
@@ -814,15 +823,60 @@
 }
 
 @keyframes lp-bird-left {
-  0%, 67% { opacity: 0; transform: translate(420px, 70px) scaleX(-1) rotate(2deg); }
+  0%, 67% { opacity: 0; transform: translate(420px, 70px) rotate(2deg); }
   70% { opacity: 0.9; }
   94% { opacity: 0.9; }
-  100% { opacity: 0; transform: translate(-160px, -45px) scaleX(-1) rotate(-4deg); }
+  100% { opacity: 0; transform: translate(-160px, -45px) rotate(-4deg); }
 }
 
 @keyframes lp-open {
   from { opacity: 0; transform: translateY(-8px); }
   to { opacity: 1; transform: none; }
+}
+
+@keyframes lp-float {
+  0%, 100% { transform: translateY(0) rotate(2deg); }
+  50% { transform: translateY(-12px) rotate(3.5deg); }
+}
+
+@keyframes lp-float-slow {
+  0%, 100% { transform: translateY(0) rotate(-0.5deg); }
+  50% { transform: translateY(-18px) rotate(1deg); }
+}
+
+@keyframes lp-spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes lp-pulse-soft {
+  0%, 100% { opacity: 0.78; transform: rotate(4deg) scale(1); }
+  50% { opacity: 0.92; transform: rotate(4deg) scale(1.04); }
+}
+
+.lp-infrastructure img {
+  animation: lp-pulse-soft 6s ease-in-out infinite;
+}
+
+.lp-between > img {
+  animation: lp-float 8s ease-in-out infinite;
+}
+
+.lp-method-head img {
+  animation: lp-float-slow 9s ease-in-out infinite;
+}
+
+.lp-intro-branch {
+  animation: lp-float 10s ease-in-out 2s infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lp-infrastructure img,
+  .lp-between > img,
+  .lp-method-head img,
+  .lp-intro-branch {
+    animation: none !important;
+  }
 }
 
 @media (max-width: 960px) {
