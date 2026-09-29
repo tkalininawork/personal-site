@@ -22,6 +22,18 @@
           if (other !== item) other.open = false;
         });
         track('accordion_open_' + item.getAttribute('data-accordion'));
+        // На мобилке прокручиваем к началу пункта, чтобы читать с заголовка
+        var summary = item.querySelector('summary');
+        if (summary) {
+          setTimeout(function () {
+            var rect = summary.getBoundingClientRect();
+            // Если summary уехал выше viewport или слишком высоко — скроллим
+            if (rect.top < 0 || rect.top > window.innerHeight * 0.4) {
+              var scrollTarget = window.scrollY + rect.top - 12;
+              window.scrollTo({ top: scrollTarget, behavior: 'smooth' });
+            }
+          }, 60);
+        }
       });
     });
   }

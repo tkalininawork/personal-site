@@ -51,17 +51,6 @@
   padding: 56px 0 80px;
 }
 
-/* Subtle large ink glow behind right column for depth */
-.lp-hero::before {
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(ellipse 72% 90% at 80% 60%, rgba(223, 79, 143, 0.13) 0%, transparent 60%),
-    radial-gradient(ellipse 48% 60% at 92% 20%, rgba(217, 231, 91, 0.18) 0%, transparent 55%);
-  content: "";
-  pointer-events: none;
-  z-index: 0;
-}
 
 .lp-hero-copy {
   position: relative;
@@ -81,8 +70,8 @@
 .lp-hero-lead {
   max-width: 680px;
   margin-bottom: 14px;
-  font-size: clamp(22px, 2.1vw, 29px);
-  line-height: 1.38;
+  font-size: clamp(17px, 1.6vw, 21px);
+  line-height: 1.42;
 }
 
 .lp-audience {
@@ -171,7 +160,7 @@
 
 .lp-flower {
   position: absolute;
-  z-index: 2;
+  z-index: 4;
   right: -78px;
   bottom: -10px;
   width: min(640px, 114%);
@@ -180,17 +169,45 @@
   animation: lp-flower-breathe 7s ease-in-out infinite;
 }
 
-/* Feathers — extra large drama piece floating behind the flower */
-.lp-feathers {
+/* ── Garden panel (Bosch composition) ────────────────── */
+.lp-garden-panel {
   position: absolute;
-  z-index: 1;
-  right: -120px;
-  top: -30px;
-  width: min(820px, 148%);
+  inset: 0;
+  background: var(--lp-ink);
+  border-radius: 60px 28px 54px 42px / 42px 54px 28px 60px;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.lp-garden-giraffe {
+  position: absolute;
+  bottom: -10%;
+  left: -8%;
+  width: 90%;
   max-width: none;
-  opacity: 0.82;
-  transform-origin: 50% 50%;
-  animation: lp-float-slow 11s ease-in-out infinite;
+  mix-blend-mode: screen;
+  animation: lp-float-slow 10s ease-in-out infinite;
+}
+
+.lp-garden-boat {
+  position: absolute;
+  top: 3%;
+  right: -6%;
+  width: 66%;
+  max-width: none;
+  mix-blend-mode: screen;
+  animation: lp-float 13s ease-in-out 2s infinite;
+}
+
+.lp-garden-fish {
+  position: absolute;
+  top: 38%;
+  left: 10%;
+  width: 48%;
+  max-width: none;
+  opacity: 0.88;
+  mix-blend-mode: screen;
+  animation: lp-float 9s ease-in-out 5s infinite;
 }
 
 .lp-bird {
@@ -679,7 +696,7 @@
 
 .lp-invitation > img {
   width: min(430px, 40%);
-  margin: 0 auto -22px;
+  margin: 0 auto 16px;
 }
 
 .lp-invitation-grid {
@@ -854,10 +871,11 @@
 }
 
 @keyframes lp-bird-left {
-  0%, 67% { opacity: 0; transform: translate(420px, 70px) rotate(2deg); }
-  70% { opacity: 0.9; }
-  94% { opacity: 0.9; }
-  100% { opacity: 0; transform: translate(-160px, -45px) rotate(-4deg); }
+  0%   { opacity: 0;   transform: translate(420px, 70px) rotate(2deg) scaleX(-1); }
+  67%  { opacity: 0;   transform: translate(420px, 70px) rotate(2deg) scaleX(-1); }
+  70%  { opacity: 0.9; transform: translate(340px, 53px) rotate(1.5deg) scaleX(-1); }
+  94%  { opacity: 0.9; transform: translate(-100px, -35px) rotate(-3deg) scaleX(-1); }
+  100% { opacity: 0;   transform: translate(-160px, -45px) rotate(-4deg) scaleX(-1); }
 }
 
 @keyframes lp-open {
@@ -906,7 +924,9 @@
   .lp-between > img,
   .lp-method-head img,
   .lp-intro-branch,
-  .lp-feathers {
+  .lp-garden-giraffe,
+  .lp-garden-boat,
+  .lp-garden-fish {
     animation: none !important;
   }
 }
@@ -928,11 +948,6 @@
   .lp-flower {
     right: -110px;
     width: 560px;
-  }
-
-  .lp-feathers {
-    right: -140px;
-    width: min(700px, 130%);
   }
 
   .lp-bird-left {
@@ -977,12 +992,6 @@
     right: 5%;
     left: auto;
     width: min(580px, 94%);
-  }
-
-  .lp-feathers {
-    right: -5%;
-    top: -10px;
-    width: min(680px, 108%);
   }
 
   .lp-bird-right {
@@ -1143,6 +1152,7 @@
   .lp-flower {
     right: -6%;
     width: min(430px, 108%);
+    z-index: 5;
   }
 
   .lp-bird-right {
@@ -1231,7 +1241,10 @@
   }
 
   .lp-infrastructure p {
-    font-size: clamp(41px, 12vw, 54px);
+    font-size: clamp(28px, 8.2vw, 40px);
+    word-break: normal;
+    overflow-wrap: normal;
+    hyphens: none;
   }
 
   .lp-infrastructure img {
