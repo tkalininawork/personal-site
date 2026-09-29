@@ -86,6 +86,7 @@
   flex-wrap: wrap;
   gap: 14px 24px;
   align-items: center;
+  margin-top: 32px;
   margin-bottom: 28px;
 }
 
@@ -162,23 +163,11 @@
 .lp-hero-wings {
   position: absolute;
   z-index: 4;
-  bottom: -6%;
+  bottom: 10%;
   left: 50%;
   transform: translateX(-50%);
   width: clamp(480px, 100%, 860px);
   max-width: none;
-}
-
-/* ── Hero art: phoenix bird flying left→right ────────── */
-.lp-hero-phoenix {
-  position: absolute;
-  top: 5%;
-  left: 0;
-  width: clamp(200px, 26vw, 400px);
-  max-width: none;
-  z-index: 6;
-  pointer-events: none;
-  animation: lp-phoenix-fly 13s linear infinite;
 }
 
 .lp-format-strip {
@@ -188,7 +177,6 @@
   padding: 22px 0;
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
-  font-family: var(--serif);
   font-size: clamp(18px, 1.9vw, 23px);
   line-height: 1.25;
   text-align: center;
@@ -809,10 +797,6 @@
   transform: none;
 }
 
-@keyframes lp-phoenix-fly {
-  from { transform: translateX(-500px); }
-  to   { transform: translateX(calc(100vw + 300px)); }
-}
 
 @keyframes lp-open {
   from { opacity: 0; transform: translateY(-8px); }
@@ -862,10 +846,6 @@
   .lp-intro-branch {
     animation: none !important;
   }
-  .lp-hero-phoenix {
-    animation: none !important;
-    opacity: 0.9;
-  }
 }
 
 @media (max-width: 960px) {
@@ -884,10 +864,6 @@
 
   .lp-hero-wings {
     width: min(560px, 100%);
-  }
-
-  .lp-hero-phoenix {
-    width: clamp(180px, 30vw, 360px);
   }
 
   .lp-intro-card {
@@ -926,11 +902,6 @@
 
   .lp-hero-wings {
     width: min(520px, 92%);
-  }
-
-  .lp-hero-phoenix {
-    width: clamp(150px, 38vw, 300px);
-    top: 3%;
   }
 
   .lp-format-strip {

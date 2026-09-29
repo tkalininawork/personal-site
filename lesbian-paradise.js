@@ -9,11 +9,7 @@
 
   var items = Array.prototype.slice.call(document.querySelectorAll('.lp-accordion-item'));
   if (items.length) {
-    if (window.matchMedia('(min-width: 641px)').matches) {
-      items[0].open = true;
-    } else {
-      items.forEach(function (item) { item.open = false; });
-    }
+    items.forEach(function (item) { item.open = false; });
 
     items.forEach(function (item) {
       item.addEventListener('toggle', function () {
