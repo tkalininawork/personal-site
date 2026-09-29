@@ -163,9 +163,9 @@
 .lp-hero-wings {
   position: absolute;
   z-index: 4;
-  bottom: 10%;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, -50%);
   width: clamp(480px, 100%, 860px);
   max-width: none;
 }
