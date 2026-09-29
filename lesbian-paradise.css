@@ -158,77 +158,27 @@
   align-self: stretch;
 }
 
-.lp-flower {
+/* ── Hero art: wings flower ──────────────────────────── */
+.lp-hero-wings {
   position: absolute;
   z-index: 4;
-  right: -78px;
-  bottom: -10px;
-  width: min(640px, 114%);
+  bottom: -6%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: clamp(480px, 100%, 860px);
   max-width: none;
-  transform-origin: 48% 92%;
-  animation: lp-flower-breathe 7s ease-in-out infinite;
 }
 
-/* ── Garden panel (Bosch composition) ────────────────── */
-.lp-garden-panel {
+/* ── Hero art: phoenix bird flying left→right ────────── */
+.lp-hero-phoenix {
   position: absolute;
-  inset: 0;
-  background: var(--lp-ink);
-  border-radius: 60px 28px 54px 42px / 42px 54px 28px 60px;
-  overflow: hidden;
-  z-index: 2;
-}
-
-.lp-garden-giraffe {
-  position: absolute;
-  bottom: -10%;
-  left: -8%;
-  width: 90%;
+  top: 5%;
+  left: 0;
+  width: clamp(200px, 26vw, 400px);
   max-width: none;
-  mix-blend-mode: screen;
-  animation: lp-float-slow 10s ease-in-out infinite;
-}
-
-.lp-garden-boat {
-  position: absolute;
-  top: 3%;
-  right: -6%;
-  width: 66%;
-  max-width: none;
-  mix-blend-mode: screen;
-  animation: lp-float 13s ease-in-out 2s infinite;
-}
-
-.lp-garden-fish {
-  position: absolute;
-  top: 38%;
-  left: 10%;
-  width: 48%;
-  max-width: none;
-  opacity: 0.88;
-  mix-blend-mode: screen;
-  animation: lp-float 9s ease-in-out 5s infinite;
-}
-
-.lp-bird {
-  position: absolute;
-  z-index: 1;
-  max-width: none;
+  z-index: 6;
   pointer-events: none;
-}
-
-.lp-bird-right {
-  top: 7%;
-  right: 4%;
-  width: 190px;
-  animation: lp-bird-right 28s linear 4s infinite;
-}
-
-.lp-bird-left {
-  top: 29%;
-  left: -12%;
-  width: 154px;
-  animation: lp-bird-left 34s linear 11s infinite;
+  animation: lp-phoenix-fly 13s linear infinite;
 }
 
 .lp-format-strip {
@@ -695,8 +645,9 @@
 }
 
 .lp-invitation > img {
-  width: min(430px, 40%);
-  margin: 0 auto 16px;
+  width: min(700px, 80%);
+  margin: 0 auto 28px;
+  display: block;
 }
 
 .lp-invitation-grid {
@@ -858,24 +809,9 @@
   transform: none;
 }
 
-@keyframes lp-flower-breathe {
-  0%, 100% { transform: rotate(-0.7deg); }
-  50% { transform: rotate(0.9deg); }
-}
-
-@keyframes lp-bird-right {
-  0%, 60% { opacity: 0; transform: translate(-420px, 90px) rotate(-4deg); }
-  63% { opacity: 1; }
-  93% { opacity: 1; }
-  100% { opacity: 0; transform: translate(160px, -28px) rotate(3deg); }
-}
-
-@keyframes lp-bird-left {
-  0%   { opacity: 0;   transform: translate(420px, 70px) rotate(2deg) scaleX(-1); }
-  67%  { opacity: 0;   transform: translate(420px, 70px) rotate(2deg) scaleX(-1); }
-  70%  { opacity: 0.9; transform: translate(340px, 53px) rotate(1.5deg) scaleX(-1); }
-  94%  { opacity: 0.9; transform: translate(-100px, -35px) rotate(-3deg) scaleX(-1); }
-  100% { opacity: 0;   transform: translate(-160px, -45px) rotate(-4deg) scaleX(-1); }
+@keyframes lp-phoenix-fly {
+  from { transform: translateX(-500px); }
+  to   { transform: translateX(calc(100vw + 300px)); }
 }
 
 @keyframes lp-open {
@@ -923,11 +859,12 @@
   .lp-infrastructure img,
   .lp-between > img,
   .lp-method-head img,
-  .lp-intro-branch,
-  .lp-garden-giraffe,
-  .lp-garden-boat,
-  .lp-garden-fish {
+  .lp-intro-branch {
     animation: none !important;
+  }
+  .lp-hero-phoenix {
+    animation: none !important;
+    opacity: 0.9;
   }
 }
 
@@ -945,13 +882,12 @@
     min-height: 520px;
   }
 
-  .lp-flower {
-    right: -110px;
-    width: 560px;
+  .lp-hero-wings {
+    width: min(560px, 100%);
   }
 
-  .lp-bird-left {
-    display: none;
+  .lp-hero-phoenix {
+    width: clamp(180px, 30vw, 360px);
   }
 
   .lp-intro-card {
@@ -988,15 +924,13 @@
     min-height: 440px;
   }
 
-  .lp-flower {
-    right: 5%;
-    left: auto;
-    width: min(580px, 94%);
+  .lp-hero-wings {
+    width: min(520px, 92%);
   }
 
-  .lp-bird-right {
-    top: 0;
-    right: 12%;
+  .lp-hero-phoenix {
+    width: clamp(150px, 38vw, 300px);
+    top: 3%;
   }
 
   .lp-format-strip {
@@ -1340,8 +1274,8 @@
   }
 
   .lp-invitation > img {
-    width: 70%;
-    margin-bottom: 4px;
+    width: 100%;
+    margin-bottom: 20px;
   }
 
   .lp-rules {
@@ -1367,20 +1301,6 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .lp-flower,
-  .lp-bird-right,
-  .lp-bird-left {
-    animation: none !important;
-  }
-
-  .lp-bird-right {
-    opacity: 0.9;
-  }
-
-  .lp-bird-left {
-    opacity: 0;
-  }
-
   .lp-js .lp-reveal,
   .lp-js .lp-reveal.is-visible,
   .lp-accordion-content {
