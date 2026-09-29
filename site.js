@@ -1,4 +1,11 @@
 (function () {
+  document.querySelectorAll('[data-track]').forEach(function (link) {
+    link.addEventListener('click', function () {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ event: link.getAttribute('data-track') });
+    });
+  });
+
   var toggle = document.querySelector('.menu-toggle');
   var menu = document.getElementById('site-menu');
   if (!toggle || !menu) return;
@@ -24,6 +31,6 @@
   });
 
   window.addEventListener('resize', function () {
-    if (window.innerWidth > 700) setOpen(false);
+    if (window.innerWidth > 820) setOpen(false);
   });
 })();
