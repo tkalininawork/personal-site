@@ -739,6 +739,7 @@
   font-weight: 700;
   letter-spacing: -0.035em;
   line-height: 1;
+  white-space: nowrap;
 }
 
 .lp-price span {
