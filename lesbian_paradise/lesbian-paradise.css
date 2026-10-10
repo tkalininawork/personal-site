@@ -74,6 +74,20 @@
   line-height: 1.42;
 }
 
+.lp-hero-status {
+  display: inline-block;
+  margin-bottom: 28px;
+  padding: 8px 16px;
+  border-radius: 6px;
+  background: rgba(217, 231, 91, 0.12);
+  border: 1px solid rgba(217, 231, 91, 0.35);
+  color: #d9e75b;
+  font-size: clamp(14px, 1.3vw, 16px);
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: 0.01em;
+}
+
 .lp-audience {
   max-width: 650px;
   margin-bottom: 28px;
