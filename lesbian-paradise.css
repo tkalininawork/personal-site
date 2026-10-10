@@ -75,17 +75,27 @@
 }
 
 .lp-hero-status {
-  display: inline-block;
+  display: block;
   margin-bottom: 28px;
-  padding: 8px 16px;
+  padding: 12px 16px;
   border-radius: 6px;
-  background: rgba(217, 231, 91, 0.12);
-  border: 1px solid rgba(217, 231, 91, 0.35);
-  color: #d9e75b;
+  background: rgba(7, 26, 59, 0.06);
+  border-left: 3px solid var(--lp-pink);
   font-size: clamp(14px, 1.3vw, 16px);
-  font-weight: 500;
-  line-height: 1.4;
-  letter-spacing: 0.01em;
+  line-height: 1.5;
+}
+
+.lp-hero-status .lp-status-closed {
+  display: block;
+  color: var(--lp-ink);
+  opacity: 0.65;
+}
+
+.lp-hero-status .lp-status-next {
+  display: block;
+  color: var(--lp-pink);
+  font-weight: 700;
+  margin-top: 2px;
 }
 
 .lp-audience {
