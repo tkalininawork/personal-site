@@ -75,17 +75,33 @@
 }
 
 .lp-hero-status {
-  display: inline-block;
-  margin-bottom: 28px;
-  padding: 8px 16px;
-  border-radius: 6px;
-  background: rgba(217, 231, 91, 0.12);
-  border: 1px solid rgba(217, 231, 91, 0.35);
-  color: #d9e75b;
-  font-size: clamp(14px, 1.3vw, 16px);
-  font-weight: 500;
-  line-height: 1.4;
-  letter-spacing: 0.01em;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+  padding: 7px 16px;
+  border-radius: 100px;
+  background: var(--lp-lime);
+  color: var(--lp-ink);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.lp-hero-status::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(7, 26, 59, 0.45);
+  flex-shrink: 0;
+}
+
+.lp-hero-status .lp-status-closed,
+.lp-hero-status .lp-status-next {
+  display: inline;
 }
 
 .lp-audience {
