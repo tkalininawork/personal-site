@@ -37,29 +37,40 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   padding: 80px 0;
 }
 .lp-for-you-inner {
-  max-width: 860px;
+  max-width: 1100px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 48px;
 }
 .lp-for-you-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   margin: 32px 0;
 }
 .lp-for-you-card {
   background: var(--lp-paper, #f7f3ea);
   border-radius: 12px;
-  padding: 24px 22px;
+  padding: 28px 24px 24px;
   font-size: 15px;
-  line-height: 1.6;
+  line-height: 1.65;
   color: var(--lp-ink, #071a3b);
+  position: relative;
+}
+.lp-for-you-card-num {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--lp-pink, #df4f8f);
+  margin-bottom: 14px;
 }
 .lp-for-you-context {
   font-size: 16px;
   line-height: 1.65;
   color: var(--lp-ink, #071a3b);
   margin-bottom: 24px;
+  max-width: 760px;
 }
 .lp-for-you-highlight {
   font-size: 18px;
@@ -69,21 +80,40 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   border-left: 3px solid var(--lp-lime, #d9e75b);
   padding-left: 18px;
   margin: 0;
+  max-width: 760px;
 }
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .lp-for-you-cards { grid-template-columns: 1fr; }
   .lp-for-you { padding: 48px 0; }
+  .lp-for-you-inner { padding: 0 24px; }
 }
-/* Финальный абзац после правил */
-.lp-invite-closing {
-  margin-top: 28px;
-  padding: 22px 24px;
+/* Отступы вокруг крупной цитаты-вопроса */
+.lp-question {
+  margin-top: 40px !important;
+  margin-bottom: 40px !important;
+}
+/* Акцентная плашка перед финальным блоком */
+.lp-pre-final-banner {
+  padding: 0 48px 64px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.lp-pre-final-banner-inner {
   background: var(--lp-lime, #d9e75b);
-  border-radius: 12px;
-  font-size: 16px;
-  line-height: 1.65;
+  border-radius: 16px;
+  padding: 36px 40px;
+  font-size: 19px;
+  font-weight: 600;
+  line-height: 1.55;
   color: var(--lp-ink, #071a3b);
-  font-weight: 500;
+}
+@media (max-width: 768px) {
+  .lp-pre-final-banner { padding: 0 24px 48px; }
+  .lp-pre-final-banner-inner { padding: 24px 22px; font-size: 17px; }
+}
+/* Финальный абзац после правил (убран — теперь отдельная секция) */
+.lp-invite-closing {
+  display: none;
 }
 </style>
 <script type="application/ld+json">
@@ -158,17 +188,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <h2 id="for-you">Возможно, вам сюда</h2>
       <div class="lp-for-you-cards">
         <div class="lp-for-you-card">
+          <span class="lp-for-you-card-num">01</span>
           <p>Вы видите женщину, которая вам нравится, и сразу начинаете думать... Нравятся ли ей вообще женщины? Она на меня так посмотрела или мне показалось? Что написать, чтобы не прозвучать странно? В итоге можно провести целый вечер в размышлениях и ничего не сделать.</p>
         </div>
         <div class="lp-for-you-card">
+          <span class="lp-for-you-card-num">02</span>
           <p>Бывает, что начать разговор как раз получается. Вы умеете подойти, пошутить, сделать комплимент и даже смутить человека. А потом не понимаете, что делать дальше.</p>
         </div>
         <div class="lp-for-you-card">
+          <span class="lp-for-you-card-num">03</span>
           <p>Иногда чужой интерес так радует, что только спустя время вы спрашиваете себя, нравится ли вам самой эта женщина. Или понимаете, что продолжения уже не хочется, но теперь непонятно, как об этом сказать.</p>
         </div>
       </div>
       <p class="lp-for-you-context">В группу можно прийти после долгого перерыва в романтической жизни, в самом начале своего квирного опыта или из долгих отношений, в которые хочется вернуть задор и игривость. Опыт тоже не помешает. Можно прекрасно флиртовать и всё равно хотеть понять, как устроен именно ваш способ.</p>
-      <p class="lp-for-you-highlight">Необязательно приносить с собой большую проблему. Любопытства вполне достаточно.</p>
+      <p class="lp-for-you-highlight">Необязательно приносить с собой конкретную проблему, любопытства и потребности в исследовании вполне достаточно.</p>
     </div>
   </section>
 
@@ -340,7 +373,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <div class="lp-three-copy">
       <div><span>01</span><h3>Картина своего флирта</h3><p>Смущение, скорее всего, останется с нами. За четыре встречи можно научиться лучше его выдерживать и не считать признаком того, что всё пошло плохо. К концу группы у вас может сложиться более ясная картина собственного флирта: что вам нравится, как вы показываете интерес, в какой момент начинаете забывать о себе и своих желаниях, что помогает к себе вернуться.</p></div>
-      <div><span>02</span><h3>Варианты, которые хочется забрать</h3><p>Мы попробуем несколько вариантов и посмотрим, какие хочется забрать с собой. Как продолжить хороший разговор. Как спросить прямо, если намёки уже утомили. Как пережить несовпадение и не разрушиться. Как самой сказать «нет», передумать или попросить больше времени.</p></div>
+      <div><span>02</span><h3>Ваши открытия, которые хочется забрать</h3><p>Мы попробуем несколько вариантов флирта и посмотрим, какие хочется забрать с собой. Как продолжить классную беседу. Что делать, если намёки уже утомили. Как пережить невзаимность и не разрушиться. Как самой сказать «нет», передумать или попросить больше времени.</p></div>
       <div><span>03</span><h3>Дневник наблюдений</h3><p>Ещё у каждой останется небольшой дневник наблюдений. В него можно будет записывать свои открытия, фразы, которые вам понравились, смешные истории и всё, что хочется попробовать после группы.</p></div>
     </div>
   </section>
@@ -395,19 +428,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <li>Личные истории остаются в группе. Советы только по запросу. Сначала уточняем, затем делаем выводы.</li>
           <li>Разные реакции могут сосуществовать в одном пространстве, и это окей. Интерес, возбуждение, скука, страх, отвращение, растерянность и отсутствие отклика — всё в нашем мире возможно, и мы можем с этим справляться.</li>
         </ul>
-        <p class="lp-invite-closing">Если вы давно думаете о флирте, но всё время откладываете его до более подходящего момента, можно начать отсюда. У нас будет четыре встречи, много умных женщин, несколько прекрасных текстов и достаточно времени, чтобы присмотреться к собственному желанию.</p>
       </div>
     </div>
   </section>
 
+  <div class="lp-pre-final-banner lp-reveal">
+    <div class="lp-pre-final-banner-inner">
+      Если вы давно думаете о флирте, но всё время откладываете его до более подходящего момента, можно начать отсюда. У нас будет четыре встречи, много умных женщин, несколько прекрасных текстов и достаточно времени, чтобы присмотреться к собственному желанию.
+    </div>
+  </div>
+
   <section class="lp-final" id="join" aria-labelledby="join-title">
     <div class="lp-final-main">
-      <p class="lp-section-label">Организационное</p>
+      <p class="lp-section-label">Организационные штуки</p>
       <h2 id="join-title">Начинаем 22 ноября</h2>
       <dl class="lp-details-list">
         <div><dt>Формат</dt><dd>4 онлайн-встречи по 2,5 часа</dd></div>
         <div><dt>Группа</dt><dd>до 12 участниц</dd></div>
-        <div><dt>Встречи</dt><dd>Zoom по воскресеньям — 22 и 29 ноября, 6 и 13 декабря, с 12:00 до 14:30 по Москве</dd></div>
+        <div><dt>Встречи</dt><dd>Zoom по воскресеньям: 22 и 29 ноября, 6 и 13 декабря, с 12:00 до 14:30 по Москве</dd></div>
       </dl>
     </div>
     <div class="lp-final-action">
