@@ -161,26 +161,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 }
 
 /* ── Раздел с отзывами ────────────────────────────────────────────────── */
+/* Ширина и отступы — прямо на секции, как у всех других секций сайта.
+   Никакого inner-wrapper с max-width, чтобы не создавать лишнего сужения. */
 .lp-reviews {
-  padding: 72px 0 88px;
-}
-.lp-reviews-inner {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 48px;
+  padding: 72px 48px 88px;
 }
 .lp-reviews-head {
-  max-width: 540px;
   margin-bottom: 32px;
 }
-.lp-reviews-title {
-  font-family: 'Lora', serif;
-  font-size: clamp(26px, 3.5vw, 40px);
-  font-weight: 700;
-  line-height: 1.18;
-  margin: 0 0 10px;
-  color: var(--lp-ink, #071A3B);
-}
+/* НЕ переопределяем h2 — пусть наследует глобальные стили сайта */
 .lp-reviews-sub {
   font-size: 16px;
   line-height: 1.6;
@@ -190,12 +179,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 }
 .lp-reviews-track {
   display: flex;
+  width: 100%;
   overflow-x: scroll;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
   border-radius: 16px;
+  min-width: 0;
 }
 .lp-reviews-track::-webkit-scrollbar { display: none; }
 .lp-review-card {
@@ -295,8 +286,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 .lp-reviews-arrow:disabled { opacity: .3; cursor: default; }
 .lp-reviews-arrow svg { width: 15px; height: 15px; }
 @media (max-width: 768px) {
-  .lp-reviews { padding: 48px 0 64px; }
-  .lp-reviews-inner { padding: 0 24px; }
+  .lp-reviews { padding: 48px 24px 64px; }
   .lp-review-card { padding: 28px 24px 24px; }
   .lp-review-card::before { font-size: 140px; }
   .lp-review-quote { font-size: 15.5px; }
@@ -631,10 +621,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <!-- ════════════════════════ ОТЗЫВЫ ════════════════════════════════════ -->
   <section class="lp-reviews lp-reveal" aria-labelledby="reviews-title">
-    <div class="lp-reviews-inner">
       <div class="lp-reviews-head">
         <p class="lp-section-label">Отзывы</p>
-        <h2 id="reviews-title" class="lp-reviews-title">Что пишут участницы Сада</h2>
+        <h2 id="reviews-title">Что пишут участницы Сада</h2>
         <p class="lp-reviews-sub">Отзывы участниц первого потока о том, что они взяли с собой после 4 встреч.</p>
       </div>
 
@@ -678,7 +667,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </button>
         </div>
       </div>
-    </div>
   </section>
 
   <section class="lp-final" id="join" aria-labelledby="join-title">
