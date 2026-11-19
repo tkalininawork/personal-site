@@ -291,6 +291,42 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .lp-review-card::before { font-size: 140px; }
   .lp-review-quote { font-size: 15.5px; }
 }
+
+/* ── Плашка «осталось места» ──────────────────────────────────────────── */
+.lp-spots-notice {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: var(--lp-lime, #D9E75B);
+  color: var(--lp-ink, #071A3B);
+  border-radius: 14px;
+  padding: 18px 20px;
+  margin-bottom: 24px;
+  font-size: 15px;
+  line-height: 1.55;
+  font-family: 'Inter', sans-serif;
+}
+.lp-spots-notice-icon {
+  font-size: 18px;
+  flex-shrink: 0;
+  line-height: 1.4;
+  margin-top: 1px;
+}
+.lp-spots-notice a {
+  color: inherit;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+@media (max-width: 768px) {
+  .lp-spots-notice {
+    font-size: 14px;
+    padding: 14px 16px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    gap: 10px;
+  }
+}
 </style>
 <script type="application/ld+json">
 {
@@ -685,6 +721,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p class="lp-payment-note">за все четыре встречи</p>
       <p class="lp-first-price">Чем ближе к старту встреч, тем выше будет цена.</p>
       <p class="lp-payment-note">После оплаты вы получите доступ в закрытый Telegram-канал. Там появятся ссылки на подключение и вся информация о встречах. Для начала группы я попрошу вас заполнить небольшую форму, чтобы узнать, с чем вы приходите.</p>
+      <div class="lp-spots-notice">
+        <span class="lp-spots-notice-icon">🌿</span>
+        <span>Группа почти собрана, осталось 2 места. Если хотите присоединиться — напишите сначала в Telegram <a href="https://t.me/poboisya_boga" target="_blank" rel="noopener noreferrer">@poboisya_boga</a>, уточним, есть ли место.</span>
+      </div>
       <a class="lp-button lp-button-wide" href="https://t.me/tribute/app?startapp=s19Ic" target="_blank" rel="noopener noreferrer" data-track="final_cta_click">Присоединиться к группе <span aria-hidden="true">↗</span></a>
       <p class="lp-question-note">Если остались вопросы, напишите мне в Telegram:</p>
       <a class="lp-final-link" href="https://t.me/poboisya_boga" target="_blank" rel="noopener noreferrer" data-track="telegram_question_click">@poboisya_boga</a>
