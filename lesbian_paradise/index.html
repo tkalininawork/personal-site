@@ -292,6 +292,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .lp-review-quote { font-size: 15.5px; }
 }
 
+/* ── Лист ожидания ──────────────────────────────────────────────────────── */
+.lp-waitlist-text {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--lp-white, #FFFDF8);
+  opacity: 0.85;
+  margin: 0 0 16px;
+  font-family: 'Inter', sans-serif;
+}
+@media (max-width: 768px) {
+  .lp-waitlist-text {
+    font-size: 14px;
+  }
+}
+
 /* ── Плашка «осталось места» ──────────────────────────────────────────── */
 .lp-spots-notice {
   display: flex;
@@ -374,7 +389,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <main id="main">
   <header class="lp-hero" id="top">
     <div class="lp-hero-copy">
-      <p class="lp-hero-status" aria-label="Статус набора">Набор открыт · начинаем 22 ноября</p>
+      <p class="lp-hero-status" aria-label="Статус набора">Открытая запись в лист ожидания</p>
       <p class="lp-kicker">Философско-практическая группа о лесбийском флирте</p>
       <h1>Сад лесбийских наслаждений</h1>
       <p class="lp-hero-lead">Четыре онлайн-встречи для тех, кому хочется флиртовать с женщинами и получать от этого удовольствие.</p>
@@ -708,24 +723,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <section class="lp-final" id="join" aria-labelledby="join-title">
     <div class="lp-final-main">
       <p class="lp-section-label">Организационные штуки</p>
-      <h2 id="join-title">Начинаем 22 ноября</h2>
+      <h2 id="join-title">Следующий поток</h2>
       <dl class="lp-details-list">
+        <div><dt>Старт</dt><dd>предварительно февраль 2027</dd></div>
         <div><dt>Формат</dt><dd>4 онлайн-встречи по 2,5 часа</dd></div>
         <div><dt>Группа</dt><dd>до 12 участниц</dd></div>
-        <div><dt>Встречи</dt><dd>Zoom по воскресеньям: 22 и 29 ноября, 6 и 13 декабря, с 12:00 до 14:30 по Москве</dd></div>
+        <div><dt>Встречи</dt><dd>Zoom по воскресеньям, 12:00–14:30 по Москве</dd></div>
       </dl>
     </div>
     <div class="lp-final-action">
-      <p class="lp-section-label">Набор открыт</p>
-      <p class="lp-price">70&nbsp;€ <span>или</span> 6500&nbsp;₽</p>
+      <p class="lp-section-label">Открыта запись в лист ожидания</p>
+      <p class="lp-price">75&nbsp;€ <span>или</span> 6&nbsp;800&nbsp;₽</p>
       <p class="lp-payment-note">за все четыре встречи</p>
-      <p class="lp-first-price">Чем ближе к старту встреч, тем выше будет цена.</p>
-      <p class="lp-payment-note">После оплаты вы получите доступ в закрытый Telegram-канал. Там появятся ссылки на подключение и вся информация о встречах. Для начала группы я попрошу вас заполнить небольшую форму, чтобы узнать, с чем вы приходите.</p>
-      <div class="lp-spots-notice">
-        <span class="lp-spots-notice-icon">🌿</span>
-        <span>Группа почти собрана, осталось 2 места. Если хотите присоединиться — напишите сначала в Telegram <a href="https://t.me/poboisya_boga" target="_blank" rel="noopener noreferrer">@poboisya_boga</a>, уточним, есть ли место.</span>
-      </div>
-      <a class="lp-button lp-button-wide" href="https://t.me/tribute/app?startapp=s19Ic" target="_blank" rel="noopener noreferrer" data-track="final_cta_click">Присоединиться к группе <span aria-hidden="true">↗</span></a>
+      <p class="lp-first-price"><strong>Чем ближе к старту встреч, тем выше будет цена.</strong></p>
+      <p class="lp-waitlist-text">Если хочется попасть в следующий поток — подпишитесь на бот. Там появится анонс нового потока, и вы узнаете об этом первыми.</p>
+      <p class="lp-waitlist-text">Подписка в боте фиксирует для вас минимальную стартовую цену.</p>
+      <a class="lp-button lp-button-wide" href="https://t.me/les_paradise_bot" target="_blank" rel="noopener noreferrer" data-track="waitlist_cta_click">Подписаться на бот <span aria-hidden="true">↗</span></a>
       <p class="lp-question-note">Если остались вопросы, напишите мне в Telegram:</p>
       <a class="lp-final-link" href="https://t.me/poboisya_boga" target="_blank" rel="noopener noreferrer" data-track="telegram_question_click">@poboisya_boga</a>
     </div>
